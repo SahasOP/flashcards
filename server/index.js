@@ -5,7 +5,12 @@ require('dotenv').config();
 const app = express();
 
 const cors = require('cors');
-app.use(cors());
+
+app.use(cors({
+  origin: ["https://flashcards-two-red.vercel.app"],
+  methods: ["POST","GET"],
+  credentials: true
+}));
 
 app.use(express.json());
 
