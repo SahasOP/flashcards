@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   const fetchFlashcards = async () => {
     try {
-      const res = await axios.get('http://flashcards-api-five.vercel.app/api/flashcards');
+      const res = await axios.get('https://flashcards-api-five.vercel.app/api/flashcards');
       setFlashcards(res.data);
     } catch (error) {
       console.error('Error fetching flashcards:', error);
@@ -25,11 +25,11 @@ const Dashboard = () => {
     event.preventDefault();
     try {
       if (editMode) {
-        await axios.put(`http://flashcards-api-five.vercel.app/api/flashcards/${currentCard.id}`, form);
+        await axios.put(`https://flashcards-api-five.vercel.app/api/flashcards/${currentCard.id}`, form);
         setEditMode(false);
         setCurrentCard(null);
       } else {
-        await axios.post('http://flashcards-api-five.vercel.app/api/flashcards', form);
+        await axios.post('https://flashcards-api-five.vercel.app/api/flashcards', form);
       }
       setForm({ question: '', answer: '' });
       fetchFlashcards();
@@ -46,7 +46,7 @@ const Dashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://flashcards-api-five.vercel.app/api/flashcards/${id}`);
+      await axios.delete(`https://flashcards-api-five.vercel.app/api/flashcards/${id}`);
       fetchFlashcards();
     } catch (error) {
       console.error('Error deleting flashcard:', error);
