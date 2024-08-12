@@ -8,7 +8,7 @@ const cors = require('cors');
 
 app.use(cors({
   origin: ["https://flashcards-two-red.vercel.app"],
-  methods: ["POST","GET"],
+  methods: ["POST","GET","DELETE","PUT"],
   credentials: true
 }));
 
