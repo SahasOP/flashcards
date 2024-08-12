@@ -12,7 +12,7 @@ const Home = () => {
 
   const fetchFlashcards = async () => {
     try {
-      const res = await axios.get('http://flashcards-api-five.vercel.app/api/flashcards');
+      const res = await axios.get('https://flashcards-api-five.vercel.app/api/flashcards');
       setFlashcards(res.data);
     } catch (error) {
       console.error('Error fetching flashcards:', error);
